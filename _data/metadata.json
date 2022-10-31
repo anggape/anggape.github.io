@@ -1,21 +1,21 @@
 {
   "title": "Your Blog Name",
-  "url": "https://example.com/",
+  "url": "https://anggape.github.io/",
   "language": "en",
-  "description": "I am writing about my experiences as a naval navel-gazer.",
+  "description": "just a random guy on the internet.",
   "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "subtitle": "just a random guy on the internet.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
-    "id": "https://example.com/"
+    "id": "https://anggape.github.io/"
   },
   "jsonfeed": {
     "path": "/feed/feed.json",
-    "url": "https://example.com/feed/feed.json"
+    "url": "https://anggape.github.io/feed/feed.json"
   },
   "author": {
     "name": "Your Name Here",
-    "email": "youremailaddress@example.com",
-    "url": "https://example.com/about-me/"
+    "email": "anggape.dev@gmail.com",
+    "url": "https://anggape.github.io/about-me/"
   }
 }
