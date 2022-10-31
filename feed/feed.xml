@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<title>Your Blog Name</title>
+	<title>Angga Permana</title>
 	<subtitle>just a random guy on the internet.</subtitle>
 	
 	<link href="https://anggape.github.io/feed/feed.xml" rel="self"/>
@@ -8,7 +8,7 @@
 	<updated>2018-09-30T00:00:00Z</updated>
 	<id>https://anggape.github.io/</id>
 	<author>
-		<name>Your Name Here</name>
+		<name>Angga Permana</name>
 		<email>anggape.dev@gmail.com</email>
 	</author>
 	
