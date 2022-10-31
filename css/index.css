@@ -4,6 +4,7 @@
 :root {
   --c0: rgb(17, 17, 27);
   --c1: rgb(24, 24, 37);
+  --c2: rgb(30, 30, 46);
   --c3: rgb(88, 91, 112);
   --c4: rgb(250, 179, 135);
   --c5: rgb(205, 214, 244);
@@ -89,6 +90,12 @@ pre {
 }
 code {
   word-break: break-all;
+}
+
+.content {
+  background-color: var(--c1);
+  margin: 5px;
+  box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 /* Header */
@@ -186,14 +193,14 @@ a[href].post-tag:visited {
 }
 a[href].post-tag:hover,
 a[href].post-tag:focus {
-  background-color: var(--c1);
+  background-color: var(--c2);
 }
 .postlist-item > .post-tag {
   align-self: center;
 }
 
 .infobox {
-  background-color: var(--c1);
+  background-color: var(--c2);
   color: var(--c5);
   padding: 1em 0.625em; /* 16px 10px /16 */
 }
