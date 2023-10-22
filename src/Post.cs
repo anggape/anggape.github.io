@@ -50,14 +50,20 @@ public sealed class Post
 
         var dates = exec("git", "log", "--pretty=format:%ad", "--date=iso8601", "--", path)
             .Split('\n');
+        var added = string.IsNullOrEmpty(dates.Last())
+            ? DateTime.Now
+            : DateTime.Parse(dates.Last());
+        var modified = string.IsNullOrEmpty(dates.First())
+            ? DateTime.Now
+            : DateTime.Parse(dates.First());
 
         return new Post(
             path: path,
             title: meta.Title,
             content: writer.ToString(),
             tags: meta.Tags,
-            added: DateTime.Parse(dates.Last()),
-            modified: DateTime.Parse(dates.First())
+            added: added,
+            modified: modified
         );
     }
 }
