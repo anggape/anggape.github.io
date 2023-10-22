@@ -12,7 +12,7 @@ public sealed class Post
     public readonly string Path;
     public readonly string Title;
     public readonly string Content;
-    public readonly string[] Tags;
+    public readonly Tag[] Tags;
     public readonly DateTime Added;
     public readonly DateTime Modified;
 
@@ -20,7 +20,7 @@ public sealed class Post
         string path,
         string title,
         string content,
-        string[] tags,
+        Tag[] tags,
         DateTime added,
         DateTime modified
     )
@@ -31,6 +31,8 @@ public sealed class Post
         Tags = tags;
         Added = added;
         Modified = modified;
+        foreach (var tag in tags)
+            tag.Posts.Add(this);
     }
 
     public static Post Parse(string path)
@@ -61,7 +63,7 @@ public sealed class Post
             path: path,
             title: meta.Title,
             content: writer.ToString(),
-            tags: meta.Tags,
+            tags: meta.Tags.Select(Tag.Get).ToArray(),
             added: added,
             modified: modified
         );
