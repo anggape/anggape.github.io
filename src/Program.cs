@@ -8,16 +8,7 @@ var posts = Directory
 
 foreach (var post in posts)
 {
-    Console.WriteLine(
-        post.Path
-            + "\n"
-            + "\t"
-            + string.Join(" ,", post.Tags)
-            + "\n"
-            + "--------------------------------------"
-            + "\n"
-            + post.Content
-            + "======================================"
-            + "\n"
-    );
+    Console.WriteLine(post.Path);
+    Console.WriteLine("\tadded      : " + post.Added);
+    Console.WriteLine("\tmodified   : " + post.Modified);
 }

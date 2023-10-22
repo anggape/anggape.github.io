@@ -13,13 +13,24 @@ public sealed class Post
     public readonly string Title;
     public readonly string Content;
     public readonly string[] Tags;
+    public readonly DateTime Added;
+    public readonly DateTime Modified;
 
-    private Post(string path, string title, string content, string[] tags)
+    private Post(
+        string path,
+        string title,
+        string content,
+        string[] tags,
+        DateTime added,
+        DateTime modified
+    )
     {
         Path = path;
         Title = title;
         Content = content;
         Tags = tags;
+        Added = added;
+        Modified = modified;
     }
 
     public static Post Parse(string path)
@@ -37,6 +48,16 @@ public sealed class Post
         var meta = deserializer.Deserialize<Meta>(yaml);
         renderer.Render(document);
 
-        return new Post(path: path, title: meta.Title, content: writer.ToString(), tags: meta.Tags);
+        var dates = exec("git", "log", "--pretty=format:%ad", "--date=iso8601", "--", path)
+            .Split('\n');
+
+        return new Post(
+            path: path,
+            title: meta.Title,
+            content: writer.ToString(),
+            tags: meta.Tags,
+            added: DateTime.Parse(dates.Last()),
+            modified: DateTime.Parse(dates.First())
+        );
     }
 }
