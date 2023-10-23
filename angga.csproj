@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Markdig" Version="0.33.0" />
+    <PackageReference Include="Scriban" Version="5.9.0" />
     <PackageReference Include="YamlDotNet" Version="13.7.1" />
   </ItemGroup>
 

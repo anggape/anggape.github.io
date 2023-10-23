@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }}</title>
+    {{ for meta in page.metas }}
+    <meta name="{{ meta.name }}" content="{{ meta.content }}" />
+    {{ end }}
+  </head>
+  <body>
+    <main>
+      <header>
+        <a href="/">anggape</a>
+        <nav>
+          <ul>
+            {{ for tag in tags }}
+            <li><a href="/tag/{{ tag.slug }}.html">{{ tag.name }}</a></li>
+            {{ end }}
+          </ul>
+        </nav>
+      </header>
+      {{ content }}
+    </main>
+  </body>
+</html>

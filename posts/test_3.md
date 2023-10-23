@@ -3,6 +3,7 @@ title: test post 3
 tags:
   - tags 3
   - tags 4
+  - tags 99
 ---
 
 # Lorem ipsum dolor sit amet consectetur.

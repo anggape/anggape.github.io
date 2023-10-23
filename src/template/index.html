@@ -1,0 +1,7 @@
+{{ for post in posts }}
+<div class="post">
+  <a href="/post/{{ post.slug }}.html">{{ post.title }}</a>
+  <br />
+  {{ post.added }}
+</div>
+{{ end }}
