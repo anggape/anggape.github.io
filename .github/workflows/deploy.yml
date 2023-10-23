@@ -2,6 +2,8 @@ on: [push, workflow_dispatch]
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: checkout repository
         uses: actions/checkout@v3
