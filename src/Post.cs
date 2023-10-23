@@ -15,10 +15,12 @@ public sealed class Post
     public readonly Tag[] Tags;
     public readonly DateTime Added;
     public readonly DateTime Modified;
+    public readonly string Slug;
 
     private Post(
         string path,
         string title,
+        string slug,
         string content,
         Tag[] tags,
         DateTime added,
@@ -28,6 +30,7 @@ public sealed class Post
         Path = path;
         Title = title;
         Content = content;
+        Slug = slug;
         Tags = tags;
         Added = added;
         Modified = modified;
@@ -65,7 +68,8 @@ public sealed class Post
             content: writer.ToString(),
             tags: meta.Tags.Select(Tag.Get).ToArray(),
             added: added,
-            modified: modified
+            modified: modified,
+            slug: meta.Slug ?? slug(meta.Title)
         );
     }
 }

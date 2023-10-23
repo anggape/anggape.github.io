@@ -1,5 +1,6 @@
 ---
 title: test post 4
+slug: custom
 tags:
   - tags 4
   - tags 5

@@ -4,6 +4,7 @@ public sealed class Tag
 {
     public readonly string Name;
     public readonly List<Post> Posts;
+    public string Slug => slug(Name);
 
     private static readonly Dictionary<string, Tag> s_AllTags = new Dictionary<string, Tag>();
     public static Tag[] All => s_AllTags.Values.ToArray();

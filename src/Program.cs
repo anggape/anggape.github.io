@@ -9,6 +9,7 @@ var posts = Directory
 foreach (var post in posts)
 {
     Console.WriteLine(post.Path);
+    Console.WriteLine("\tslug       : " + post.Slug);
     Console.WriteLine("\tadded      : " + post.Added);
     Console.WriteLine("\tmodified   : " + post.Modified);
 }
@@ -16,5 +17,6 @@ foreach (var post in posts)
 foreach (var tag in Tag.All)
 {
     Console.WriteLine(tag.Name);
+    Console.WriteLine("\t" + tag.Slug);
     Console.WriteLine("\t" + tag.Posts.Count);
 }

@@ -1,6 +1,7 @@
 global using static anggape.Helper;
 
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace anggape;
 
@@ -23,5 +24,12 @@ public static class Helper
         process.WaitForExit();
 
         return process.StandardOutput.ReadToEnd();
+    }
+
+    public static string slug(string value)
+    {
+        value = Regex.Replace(value.ToLower(), @"[^a-z0-9\s-]", string.Empty);
+        value = Regex.Replace(value, @"\s+", " ");
+        return Regex.Replace(value, @"\s", "-");
     }
 }
