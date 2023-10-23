@@ -40,8 +40,10 @@ File.WriteAllText(
 
 foreach (var post in posts)
 {
+    var path = Path.Combine(postOutputPath, $"{post.Slug}.html");
+    Console.WriteLine(path);
     File.WriteAllText(
-        Path.Combine(postOutputPath, $"{post.Slug}.html"),
+        path,
         layoutTemplate.Render(
             new
             {
@@ -55,9 +57,10 @@ foreach (var post in posts)
 
 foreach (var tag in Tag.All)
 {
-    Console.WriteLine(tag.Name + " " + tag.Posts.Count);
+    var path = Path.Combine(tagOutputPath, $"{tag.Slug}.html");
+    Console.WriteLine(path);
     File.WriteAllText(
-        Path.Combine(tagOutputPath, $"{tag.Slug}.html"),
+        path,
         layoutTemplate.Render(
             new
             {
